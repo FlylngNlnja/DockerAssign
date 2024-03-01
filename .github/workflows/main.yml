@@ -37,10 +37,10 @@ jobs:
           docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/videostreaming videostreaming/
           docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/authentication authentication/
           docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/filesystemservice filesystemservice/
-          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/MySQL MySQL/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/mysql MySQL/
 
           docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/videoupload
           docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/videostreaming
           docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/authentication
           docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/filesystemservice
-          docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/MySQL
+          docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/mysql
