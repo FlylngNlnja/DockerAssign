@@ -22,20 +22,13 @@ const connection = mysql.createConnection({
 app.use(express.json());
 app.post('/upload', upload.single('file'), (req, res) => {
     const file = req.file;
-    fs.renameSync(file.path, 'storage/' + file.originalname);
-    res.send('File uploaded successfully');
-});
-
-app.get('/download/:filename', (req, res) => {
-    const filename = req.params.filename;
-    const file = fs.createReadStream('storage/' + filename);
-    file.pipe(res);
-});
-
-app.post('/videos', (req, res) => {
-    const { name, url } = req.body;
+    const { name } = req.body;
+    const path = 'storage/' + file.originalname
+    if(s.existsSync(path)){
+        res.status(401).json({ error: 'File already exists' });
+    }
     const query = 'INSERT INTO PATHS (NAME, PATH) VALUES (?, ?)';
-    connection.query(query, [name, url], (err, result) => {
+    connection.query(query, [name, path], (err, result) => {
         if (err) {
             console.error('Error executing SQL query:', err);
             res.status(500).json({ error: 'Internal Server Error' });
@@ -43,35 +36,15 @@ app.post('/videos', (req, res) => {
         }
         res.json({ message: 'Video inserted successfully', id: result.insertId });
     });
-});
-app.get('/videos', (req, res) => {
-    const query = 'SELECT * FROM PATHS';
-    connection.query(query, (err, results) => {
-        if (err) {
-            console.error('Error executing SQL query:', err);
-            res.status(500).json({ error: 'Internal Server Error' });
-            return;
-        }
-        res.json(results);
-    });
+    fs.renameSync(file.path, 'storage/' + file.originalname);
+    res.send('File uploaded successfully');
 });
 
-app.post('/storeVideo', (req, res) => {
-    const { NAME, PATH } = req.body;
-    const query = 'INSERT INTO videos (NAME, PATH) VALUES (?, ?)';
-    connection.query(query, [NAME, PATH], (error, results, fields) => {
-        if (error) {
-            console.error('Error inserting video:', error);
-            res.status(500).json({ error: 'Internal Server Error' });
-            return;
-        }
-        res.json({ message: 'Video metadata stored successfully' });
-    });
-});
 
-app.get('/videos/:videoName', (req, res) => {
-    const videoName = req.params.videoName;
-    const query = 'SELECT * FROM videos WHERE name = ?';
+
+app.get('/videos/:NAME', (req, res) => {
+    const videoName = req.params.NAME;
+    const query = 'SELECT * FROM PATH WHERE NAME = ?';
     connection.query(query, [videoName], (err, results) => {
         if (err) {
             console.error('Error executing SQL query:', err);
@@ -82,7 +55,9 @@ app.get('/videos/:videoName', (req, res) => {
             res.status(404).json({ error: 'Video not found' });
             return;
         }
-        res.json(results[0]);
+        const filename = req.params.filename;
+        const file = fs.createReadStream(results[0].PATH);
+        file.pipe(res);
     });
 });
 

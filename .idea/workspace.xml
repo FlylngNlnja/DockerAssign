@@ -5,7 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="032b7b03-e7d0-4eb7-bb1a-491142ebe9cc" name="Changes" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Pages/LoginForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Pages/MainPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Pages/videoPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySQL/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySQL/basicschema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/basicschema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filesystemservice/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/filesystemservice/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,19 +63,22 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2d4w7EWeeZr71F2p7AdRETmQVrw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ChristosSampakidis/Desktop/dockerfil/MySQL",
+    "last_opened_file_path": "C:/Users/ChristosSampakidis/Desktop/dockerfil/frontend/src/Pages",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +89,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ChristosSampakidis\Desktop\dockerfil\frontend\src\Pages" />
+      <recent name="C:\Users\ChristosSampakidis\Desktop\dockerfil\frontend" />
       <recent name="C:\Users\ChristosSampakidis\Desktop\dockerfil\MySQL" />
     </key>
   </component>
@@ -95,7 +126,7 @@
       <updated>1709280488994</updated>
       <workItem from="1709280490117" duration="704000" />
       <workItem from="1709281200356" duration="338000" />
-      <workItem from="1709286627349" duration="9457000" />
+      <workItem from="1709286627349" duration="15643000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -177,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709296114495</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1709296210927</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709296210927</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +234,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
