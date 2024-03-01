@@ -22,10 +22,42 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       -
-        name: Build and push
+        name: authentication
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
+          file: ./authentication/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+      -
+        name: filesystemservice
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./filesystemservice/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+      -
+        name: MySQL
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./MySQL/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+      -
+        name: videostreaming
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./videostreaming/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+      -
+        name: videoupload
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./videoupload/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
