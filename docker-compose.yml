@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  upload_video:
+    build: ./videoupload
+    ports:
+      - "3000:3000"
+    depends_on:
+      - authentication_service
+      - file_system_service
+      - mysql_db_service
+
+  video_streaming:
+    build: ./videostreaming
+    ports:
+      - "3001:3000"
+    depends_on:
+      - authentication_service
+      - file_system_service
+      - mysql_db_service
+
+  authentication_service:
+    build: ./authentication
+    ports:
+      - "3002:3000"
+    depends_on:
+      - mysql_db_service
+
+  file_system_service:
+    build: ./filesystemservice
+    ports:
+      - "3003:3000"
+
+  mysql_db_service:
+    build: ./MySQL
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: video_streaming
+      MYSQL_USER: user
+      MYSQL_PASSWORD: atyponwebdev
