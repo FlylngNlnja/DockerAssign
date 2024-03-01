@@ -33,11 +33,11 @@ jobs:
 
       - name: Build and push Docker images
         run: |
-          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/videoupload upload_video_service/
-          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/videostreaming video_streaming_service/
-          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/authentication authentication_service/
-          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/filesystemservice file_system_service/
-          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/MySQL mysql_db_service/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/videoupload videoupload/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/videostreaming videostreaming/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/authentication authentication/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/filesystemservice filesystemservice/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/MySQL MySQL/
 
           docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/videoupload
           docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/videostreaming
