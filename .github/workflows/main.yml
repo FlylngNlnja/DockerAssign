@@ -25,7 +25,7 @@ jobs:
         name: authentication
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./authentication
           file: ./authentication/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
@@ -33,7 +33,7 @@ jobs:
         name: filesystemservice
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./filesystemservice
           file: ./filesystemservice/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v5
         continue-on-error: true
         with:
-          context: .
+          context: ./MySQL
           file: ./MySQL/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
@@ -51,7 +51,7 @@ jobs:
         name: videostreaming
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./videostreaming
           file: ./videostreaming/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
@@ -59,7 +59,7 @@ jobs:
         name: videoupload
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./videoupload
           file: ./videoupload/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest

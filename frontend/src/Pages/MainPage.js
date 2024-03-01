@@ -88,7 +88,7 @@ const MainPage = () => {
     return (<>
                 <form onSubmit={addtoService}>
                     <label>Upload Video</label>
-                    <input type="file" name="file" id="file" />
+                    <input type="file" name="file" id="file" accept="video/*" />
                     <button type="submit" value="Upload" > Upload </button>
                 </form>
                 <form onSubmit={RetrieveVideo}>
