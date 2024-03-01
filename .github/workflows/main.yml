@@ -1,0 +1,41 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Log in to Docker registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker images
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}/upload-video-service upload_video_service/
+          docker build -t ghcr.io/${{ github.repository }}/video-streaming-service video_streaming_service/
+          docker build -t ghcr.io/${{ github.repository }}/authentication-service authentication_service/
+          docker build -t ghcr.io/${{ github.repository }}/file-system-service file_system_service/
+          docker build -t ghcr.io/${{ github.repository }}/mysql-db-service mysql_db_service/
+
+          docker push ghcr.io/${{ github.repository }}/upload-video-service
+          docker push ghcr.io/${{ github.repository }}/video-streaming-service
+          docker push ghcr.io/${{ github.repository }}/authentication-service
+          docker push ghcr.io/${{ github.repository }}/file-system-service
+          docker push ghcr.io/${{ github.repository }}/mysql-db-service
