@@ -17,6 +17,7 @@ services:
       - authentication_service
       - file_system_service
       - mysql_db_service
+    restart: always
 
   video_streaming:
     build: ./videostreaming
@@ -26,6 +27,7 @@ services:
       - authentication_service
       - file_system_service
       - mysql_db_service
+    restart: always
 
   authentication_service:
     build: ./authentication
@@ -33,6 +35,7 @@ services:
       - "3011:3000"
     depends_on:
       - mysql_db_service
+    restart: always
 
   file_system_service:
     build: ./filesystemservice
@@ -41,3 +44,4 @@ services:
     depends_on:
       - authentication_service
       - mysql_db_service
+    restart: always

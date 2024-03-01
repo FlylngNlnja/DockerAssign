@@ -28,21 +28,24 @@ const connection = mysql.createConnection({
 app.use(express.json());
 app.post('/upload', upload.single('file'), (req, res) => {
     const file = req.file;
-    const path = 'storage/' + file.originalname;
+    const dir = 'storage/';
+    const path = dir + file.originalname;
     if(fs.existsSync(path)){
         return res.status(401).json({ error: 'File already exists' });
     }
-    fs.renameSync(file.path, path);
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(path, fs.readFileSync(file.path));
     res.json({ status:"200" ,message: path });
 });
 
 
-app.get('/videos/retr', (req, res) => {
+app.post('/videos/retr', (req, res) => {
     const { videopath } = req.body;
     const file = fs.createReadStream(videopath);
     file.pipe(res);
 });
 
-app.listen(3000, () => {
-    console.log('File service listening on port 3000');
+app.listen(3000, () => {    console.log('File service listening on port 3000');
 });

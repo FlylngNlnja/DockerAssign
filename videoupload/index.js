@@ -30,6 +30,7 @@ connection.connect((err) => {
     console.log('Connected to MySQL database');
 });
 app.post('/save-video', (req, res) => {
+    console.log("fired");
     const { name, path } = req.body;
     const query = 'INSERT INTO PATHS (NAME, PATH) VALUES (?, ?)';
     connection.query(query, [name, path], (err, result) => {
