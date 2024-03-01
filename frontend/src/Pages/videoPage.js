@@ -6,7 +6,6 @@ const VideoPage = () => {
     useEffect(() => {
         if (!sessionStorage.getItem('token')) {
             navigate("/")
-             // Ensure function exits if token is not present
         }
     }, []);
 return(<div className="flex w-[100%] justify-content-center" style={{justifyContent:"center"}}>

@@ -8,12 +8,19 @@ app.use(bodyParser.json());
 const fileStorageServiceUrl = 'http://file-storage-service:3000';
 const upload = multer({ dest: 'uploads/' });
 const mysql = require('mysql');
+
 const connection = mysql.createConnection({
     host: 'mysql_db_service',
     port: 3306,
     user: 'mainuser',
     password: 'mainpassword',
     database: 'video_streaming'
+});
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Methods', '*');
+    next();
 });
 connection.connect((err) => {
     if (err) {

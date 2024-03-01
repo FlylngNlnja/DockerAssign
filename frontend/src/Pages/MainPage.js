@@ -15,7 +15,7 @@ const MainPage = () => {
         const file = document.getElementById('file').files[0];
         const formData = new FormData();
         formData.append('file', file);
-        const response = await fetch('http://file-storage-service:3010/upload', {
+        const response = await fetch('http://localhost:3010/upload', {
             method: 'POST',
             headers: {
                 'Authorization': sessionStorage.getItem('token')
@@ -23,7 +23,7 @@ const MainPage = () => {
             body: formData
         }).then(response => response.json()).then(data => {
             if (data.status === 200) {
-                return fetch('http://upload_video:3008/save-video', {
+                return fetch('http://localhost:3008/save-video', {
                     method: 'POST',
                     headers: {
                         'Authorization': sessionStorage.getItem('token'),

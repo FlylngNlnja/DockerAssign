@@ -4,6 +4,12 @@ const fs = require('fs');
 const mysql = require('mysql');
 const app = express();
 const upload = multer({ dest: 'uploads/' });
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Methods', '*');
+    next();
+});
 const connection = mysql.createConnection({
     host: 'mysql_db_service',
     port: 3306,
