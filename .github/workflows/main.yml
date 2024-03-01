@@ -26,16 +26,21 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Convert repository name to lowercase
+        id: lowercase-repo
+        run: |
+          echo "::set-output name=repository::$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')"
+
       - name: Build and push Docker images
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/upload-video-service upload_video_service/
-          docker build -t ghcr.io/${{ github.repository }}/video-streaming-service video_streaming_service/
-          docker build -t ghcr.io/${{ github.repository }}/authentication-service authentication_service/
-          docker build -t ghcr.io/${{ github.repository }}/file-system-service file_system_service/
-          docker build -t ghcr.io/${{ github.repository }}/mysql-db-service mysql_db_service/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/upload-video-service upload_video_service/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/video-streaming-service video_streaming_service/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/authentication-service authentication_service/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/file-system-service file_system_service/
+          docker build -t ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/mysql-db-service mysql_db_service/
 
-          docker push ghcr.io/${{ github.repository }}/upload-video-service
-          docker push ghcr.io/${{ github.repository }}/video-streaming-service
-          docker push ghcr.io/${{ github.repository }}/authentication-service
-          docker push ghcr.io/${{ github.repository }}/file-system-service
-          docker push ghcr.io/${{ github.repository }}/mysql-db-service
+          docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/upload-video-service
+          docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/video-streaming-service
+          docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/authentication-service
+          docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/file-system-service
+          docker push ghcr.io/${{ steps.lowercase-repo.outputs.repository }}/mysql-db-service
