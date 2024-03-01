@@ -40,11 +40,13 @@ jobs:
       -
         name: MySQL
         uses: docker/build-push-action@v5
+        continue-on-error: true
         with:
           context: .
           file: ./MySQL/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+
       -
         name: videostreaming
         uses: docker/build-push-action@v5
