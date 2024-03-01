@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="032b7b03-e7d0-4eb7-bb1a-491142ebe9cc" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystemservice/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/filesystemservice/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videostreaming/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/videostreaming/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoupload/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/videoupload/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoupload/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/videoupload/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoupload/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/videoupload/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +101,7 @@
       <updated>1709280488994</updated>
       <workItem from="1709280490117" duration="704000" />
       <workItem from="1709281200356" duration="338000" />
-      <workItem from="1709286627349" duration="17408000" />
+      <workItem from="1709286627349" duration="18326000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -215,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709302798208</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1709304320571</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1709304320572</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
