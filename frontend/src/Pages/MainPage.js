@@ -13,7 +13,18 @@ const MainPage = () => {
     return (
         <div id="loginform">
             <div>
-                {MainContent}
+                <form>
+                    <h1>Video Streaming</h1>
+                    <div>
+                        <button onClick={() => navigate('/VideoPage')}>Watch Video</button>
+                    </div>
+                    <div>
+                        <button onClick={() => {
+                            sessionStorage.removeItem('token');
+                            navigate('/');
+                        }}>Logout</button>
+                    </div>
+                </form>
             </div>
         </div>
     );

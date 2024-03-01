@@ -24,18 +24,25 @@ const authenticateUser = async (req, res, next) => {
     }
 };
 
-app.get('/stream/:videoId', async (req, res) => {
-    try {
-        const videoId = req.params.videoId;
-        const videoMetadataResponse = await axios.get(`${fileStorageServiceUrl}/video/${videoId}`);
-        const { videoUrl } = videoMetadataResponse.data;
-        const videoFileStream = await axios.get(videoUrl, { responseType: 'stream' });
-        videoFileStream.data.pipe(res);
-    } catch (error) {
-        console.error('Error streaming video:', error.response ? error.response.data : error.message);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+app.get('/videos/:NAME', (req, res) => {
+    const videoName = req.params.NAME;
+    const query = 'SELECT * FROM PATH WHERE NAME = ?';
+    connection.query(query, [videoName], (err, results) => {
+        if (err) {
+            console.error('Error executing SQL query:', err);
+            res.status(500).json({ error: 'Internal Server Error' });
+            return;
+        }
+        if (results.length === 0) {
+            res.status(404).json({ error: 'Video not found' });
+            return;
+        }
+        const filename = req.params.filename;
+        const file = fs.createReadStream(results[0].PATH);
+        file.pipe(res);
+    });
 });
+
 
 app.listen(3000, () => {
     console.log('Video streaming service listening on port 3000');
