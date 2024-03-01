@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="032b7b03-e7d0-4eb7-bb1a-491142ebe9cc" name="Changes" comment="initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystemservice/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/filesystemservice/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Pages/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/videoPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/videostreaming/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/videostreaming/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videostreaming/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/videostreaming/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videostreaming/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/videostreaming/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoupload/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/videoupload/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySQL/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySQL/basicschema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/basicschema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +106,7 @@
       <workItem from="1709286627349" duration="18944000" />
       <workItem from="1709309328130" duration="723000" />
       <workItem from="1709310245709" duration="437000" />
-      <workItem from="1709310699167" duration="8668000" />
+      <workItem from="1709310699167" duration="8994000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -237,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709305259966</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1709319751897</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1709319751897</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
