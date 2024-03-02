@@ -3,10 +3,10 @@
 <head>
 </head>
 <body>
-<form id="uploadForm">
+<form id="StreamForm">
     <label for="id"> Upload video</label>
     <input type="text" name="id" id="id">
-    <input type="submit" value="Upload">
+    <input type="submit" value="Stream">
 </form>
 <form id="loginform">
     <label for="username">username</label>
@@ -23,7 +23,7 @@
             document.getElementById('loginform').style.display = 'none';
         }
     };
-    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+    document.getElementById('StreamForm').addEventListener('submit', function(event) {
         event.preventDefault();
         const token = sessionStorage.getItem('token');
         if (!token) {
