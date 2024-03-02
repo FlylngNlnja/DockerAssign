@@ -1,5 +1,4 @@
 FROM mysql:latest
-
 ENV MYSQL_DATABASE=video_streaming
 ENV MYSQL_USER=mainuser
 ENV MYSQL_PASSWORD=mainpassword
