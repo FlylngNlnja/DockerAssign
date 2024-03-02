@@ -28,6 +28,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', '*');
     next();
 });
+
 app.post('/login', async (req, res) => {
     try {
         const { username, password } = req.body;
@@ -47,24 +48,6 @@ app.post('/login', async (req, res) => {
     } catch (error) {
         console.error('Error authenticating user:', error.message);
         res.status(401).json({ error: 'Invalid username or password' });
-    }
-});
-
-
-
-app.post('/verify', (req, res) => {
-    const token = req.body.token;
-    if (token) {
-        jwt.verify(token, secretKey, (err, decoded) => {
-            if (err) {
-                console.error('Error verifying token:', err.message);
-                res.status(401).json({ error: 'Invalid token' });
-            } else {
-                res.json({ valid: true });
-            }
-        });
-    } else{
-        res.status(401).json({ error: 'Token is required' });
     }
 });
 

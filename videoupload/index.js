@@ -4,20 +4,11 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-    let filePath;
-    if (req.url === '/index.html' || req.url === '/') {
-        filePath = path.join(__dirname, 'index.html');
-    } else if (req.url === '/login.html') {
-        filePath = path.join(__dirname, 'login.html');
-    } else {
-        res.writeHead(404);
-        res.end('File not found');
-        return;
-    }
-    fs.readFile(filePath, (err, data) => {
+    const htmlFilePath = path.join(__dirname, 'index.html');
+    fs.readFile(htmlFilePath, (err, data) => {
         if (err) {
             res.writeHead(500);
-            res.end('Error loading file');
+            res.end('Error loading index.html');
         } else {
             res.writeHead(200, { 'Content-Type': 'text/html' });
             res.end(data);

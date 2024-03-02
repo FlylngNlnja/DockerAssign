@@ -8,13 +8,25 @@
     <input type="text" name="id" id="id">
     <input type="submit" value="Upload">
 </form>
+<form id="loginform">
+    <label for="username">username</label>
+    <input type="text" name="username" id="username">
+    <label for="password">username</label>
+    <input type="password" name="password" id="password">
+    <input type="submit" value="Upload">
+</form>
 <video id="videoPlayer" controls autoplay style="display: none;"></video>
 <script>
+    window.onload = function() {
+        const token = sessionStorage.getItem('token');
+        if (token) {
+            document.getElementById('loginform').style.display = 'none';
+        }
+    };
     document.getElementById('uploadForm').addEventListener('submit', function(event) {
         event.preventDefault();
         const token = sessionStorage.getItem('token');
         if (!token) {
-            window.location.href = '/login.html';
             return;
         }
         const id = document.getElementById('id').value;
@@ -60,7 +72,34 @@
                 console.error('Error:', error);
             });
     });
-
+    document.getElementById('loginform').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const loginData = {
+            username: username,
+            password: password
+        };
+        fetch('http://localhost:3011/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(loginData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Login failed');
+                }
+                return response.json();
+            })
+            .then(data => {
+                sessionStorage.setItem('token', data.token);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
 </script>
 </body>
 </html>
