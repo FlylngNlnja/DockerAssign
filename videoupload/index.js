@@ -1,47 +1,31 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const axios = require('axios');
-const multer = require('multer');
-const fs = require("fs");
-const app = express();
-app.use(bodyParser.json());
-const fileStorageServiceUrl = 'http://file-storage-service:3000';
-const upload = multer({ dest: 'uploads/' });
-const mysql = require('mysql');
 
-const connection = mysql.createConnection({
-    host: 'mysql_db_service',
-    port: 3306,
-    user: 'mainuser',
-    password: 'mainpassword',
-    database: 'video_streaming'
-});
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', '*');
-    res.header('Access-Control-Allow-Methods', '*');
-    next();
-});
-connection.connect((err) => {
-    if (err) {
-        console.error('Error connecting to MySQL database:', err);
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
+const server = http.createServer((req, res) => {
+    let filePath;
+    if (req.url === '/index.html' || req.url === '/') {
+        filePath = path.join(__dirname, 'index.html');
+    } else if (req.url === '/login.html') {
+        filePath = path.join(__dirname, 'login.html');
+    } else {
+        res.writeHead(404);
+        res.end('File not found');
         return;
     }
-    console.log('Connected to MySQL database');
-});
-app.post('/save-video', (req, res) => {
-    console.log("fired");
-    const { name, path } = req.body;
-    const query = 'INSERT INTO PATHS (NAME, PATH) VALUES (?, ?)';
-    connection.query(query, [name, path], (err, result) => {
+    fs.readFile(filePath, (err, data) => {
         if (err) {
-            console.error('Error executing SQL query:', err);
-            return res.status(500).json({ error: 'Internal Server Error' });
+            res.writeHead(500);
+            res.end('Error loading file');
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
         }
-        res.json({ status:"200", message: 'Video metadata inserted successfully', id: result.insertId });
     });
 });
 
-app.listen(3000, () => {
-    console.log('Video upload service listening on port 3000');
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });

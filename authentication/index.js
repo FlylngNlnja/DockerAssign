@@ -66,7 +66,6 @@ app.post('/verify', (req, res) => {
     } else{
         res.status(401).json({ error: 'Token is required' });
     }
-
 });
 
 

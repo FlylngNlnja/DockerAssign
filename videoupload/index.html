@@ -1,0 +1,59 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form id="uploadForm">
+    <label for="file">Upload video</label>
+    <input type="file" name="file" id="file" accept="video/*">
+    <input type="submit" value="Upload">
+</form>
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var fileInput = document.getElementById('file');
+        const token = sessionStorage.getItem('token');
+        if (!token) {
+            window.location.href = '/login.html';
+            return;
+        }
+        var formData = new FormData();
+        formData.append('file', fileInput.files[0]);
+        fetch('http://localhost:3010/upload', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Upload failed');
+            })
+            .then(data => {
+                console.log('Upload successful:', data);
+                const message = data.message;
+                return fetch('http://localhost:3012/upload', {
+                    method: 'POST',
+                    body: JSON.stringify({ name: fileInput.files[0].name,filepath: message }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                console.log('Second upload successful:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+</script>
+</body>
+</html>

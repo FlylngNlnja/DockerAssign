@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form id="uploadForm">
+    <label for="id"> Upload video</label>
+    <input type="text" name="id" id="id">
+    <input type="submit" value="Upload">
+</form>
+<video id="videoPlayer" controls autoplay style="display: none;"></video>
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const token = sessionStorage.getItem('token');
+        if (!token) {
+            window.location.href = '/login.html';
+            return;
+        }
+        const id = document.getElementById('id').value;
+        fetch('http://localhost:3012/videos/retr', {
+            method: 'POST',
+            body: JSON.stringify({ id }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Upload failed');
+                }
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    throw new Error('Invalid content type');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const path = data.path;
+                return fetch('http://localhost:3010/videos/retr', {
+                    method: 'POST',
+                    body: JSON.stringify({ videopath: path }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Second upload failed');
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                const videoPlayer = document.getElementById('videoPlayer');
+                videoPlayer.src = URL.createObjectURL(blob);
+                videoPlayer.style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+
+</script>
+</body>
+</html>

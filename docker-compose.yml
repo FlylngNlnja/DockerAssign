@@ -45,3 +45,13 @@ services:
       - authentication_service
       - mysql_db_service
     restart: always
+
+  my_sql_service:
+    build: ./my_sql_service
+    ports:
+      - "3012:3000"
+    depends_on:
+      - authentication_service
+      - mysql_db_service
+    restart: always
+

@@ -1,46 +1,31 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const axios = require('axios');
+
+const http = require('http');
 const fs = require('fs');
-const multer = require('multer');
-const app = express();
-app.use(bodyParser.json());
-const fileStorageServiceUrl = 'http://file-storage-service:3000';
-const upload = multer({ dest: 'uploads/' });
-const mysql = require('mysql');
+const path = require('path');
 
-const connection = mysql.createConnection({
-    host: 'mysql_db_service',
-    port: 3306,
-    user: 'mainuser',
-    password: 'mainpassword',
-    database: 'video_streaming'
-});
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', '*');
-    res.header('Access-Control-Allow-Methods', '*');
-    next();
-});
-
-app.post('/videos', (req, res) => {
-    const { videoID } = req.body;
-    const query = 'SELECT PATH FROM PATHS WHERE ID = ?';
-    connection.query(query, [videoID], (err, results) => {
+const server = http.createServer((req, res) => {
+    let filePath;
+    if (req.url === '/index.html' || req.url === '/') {
+        filePath = path.join(__dirname, 'index.html');
+    } else if (req.url === '/login.html') {
+        filePath = path.join(__dirname, 'login.html');
+    } else {
+        res.writeHead(404);
+        res.end('File not found');
+        return;
+    }
+    fs.readFile(filePath, (err, data) => {
         if (err) {
-            console.error('Error executing SQL query:', err);
-            res.status(500).json({ error: 'Internal Server Error' });
-            return;
+            res.writeHead(500);
+            res.end('Error loading file');
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
         }
-        if (results.length === 0) {
-            res.status(404).json({ error: 'Video not found' });
-            return;
-        }
-        res.json({ path: results[0].PATH });
     });
 });
 
-
-app.listen(3000, () => {
-    console.log('Video streaming service listening on port 3000');
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
