@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="032b7b03-e7d0-4eb7-bb1a-491142ebe9cc" name="Changes" comment="initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videostreaming/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/videostreaming/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoupload/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/videoupload/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_sql_service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my_sql_service/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +116,7 @@
       <workItem from="1709310245709" duration="437000" />
       <workItem from="1709310699167" duration="15686000" />
       <workItem from="1709340603354" duration="180000" />
-      <workItem from="1709377806378" duration="6651000" />
+      <workItem from="1709377806378" duration="7367000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -295,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709384833191</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1709384895339</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1709384895339</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

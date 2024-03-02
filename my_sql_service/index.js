@@ -1,9 +1,7 @@
 const express = require('express');
 const multer  = require('multer');
-const fs = require('fs');
 const mysql = require('mysql');
 const app = express();
-const upload = multer({ dest: 'uploads/' });
 const bodyParser = require('body-parser');
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
