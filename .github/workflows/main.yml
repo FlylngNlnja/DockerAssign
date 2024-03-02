@@ -67,6 +67,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./my_sql_service
-          file: ./frontend/Dockerfile
+          file: ./my_sql_service/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest

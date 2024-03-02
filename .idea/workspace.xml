@@ -4,48 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="032b7b03-e7d0-4eb7-bb1a-491142ebe9cc" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dockerassign.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_sql_service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_sql_service/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_sql_service/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_sql_service/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videostreaming/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videostreaming/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoupload/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoupload/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystemservice/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/filesystemservice/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/LoginForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Pages/MainPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tailwind.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videostreaming/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/videostreaming/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videostreaming/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/videostreaming/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videostreaming/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/videostreaming/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videostreaming/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/videostreaming/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoupload/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/videoupload/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoupload/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/videoupload/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="032b7b03-e7d0-4eb7-bb1a-491142ebe9cc" name="Changes" comment="initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +113,7 @@
       <workItem from="1709310245709" duration="437000" />
       <workItem from="1709310699167" duration="15686000" />
       <workItem from="1709340603354" duration="180000" />
-      <workItem from="1709377806378" duration="4516000" />
+      <workItem from="1709377806378" duration="4656000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -308,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709320319565</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1709382538710</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1709382538710</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
